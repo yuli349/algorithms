@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>choice sort</title>
+</head>
+<body>
+
+</body>
+<script>
+    function choiceSort(arr) {
+        let length = arr.length;
+        for (let i = 0; i < length; i++) {
+            let maxIndex = i; //0
+            let max;
+            for (let j = 0; j < length; j++) {
+                if (arr[maxIndex] < arr[j]) {
+                    maxIndex = j; //2
+                }
+            }
+            max = arr[maxIndex]; //9
+            arr[maxIndex] = arr[length - 1];
+            arr[length - 1] = max;
+            length = length - 1;
+        }
+        return arr;
+    }
+    console.log(choiceSort([6, 4, 9, 0, 2]));
+</script>
+</html>
