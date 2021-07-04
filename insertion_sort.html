@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+</head>
+<body>
+
+</body>
+<script>
+    function insert(array, start, el) {
+        for (let i = start; i <= array.length; i++) {
+            if (i === array.length) {
+                array[i - 1] = el;
+                break;
+            }
+            if (array[i] < el) {
+                array[i - 1] = array[i];
+            }
+            else {
+                array[i - 1] = el;
+                break;
+            }
+        }
+    }
+
+    function insertSort(array) {
+        let start = array.length - 1;
+        while (start > 0) {
+            let el = array[start - 1];
+            insert(array, start, el);
+            start--;
+        }
+    }
+    const arr = [6, 4, 9, 0, 2];
+    insertSort(arr);
+    console.log(arr);
+</script>
+</html>
