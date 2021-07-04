@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buble Sort</title>
+</head>
+<body>
+
+</body>
+<script>
+    function bubleSort(array) {
+        let moved = true;
+        let length = array.length;
+        while (moved) {
+            moved = false;
+            for (let i = 0; i < length; i++) {
+                let elem;
+                if (array[i] > array[i + 1]) {
+                    elem = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = elem;
+                }
+                moved = true;
+            }
+            length = length - 1;
+        }
+        return array;
+    }
+    console.log(bubleSort([6, 4, 9, 0, 2]));
+</script>
+</html>
